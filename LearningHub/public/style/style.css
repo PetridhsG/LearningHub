@@ -1,0 +1,767 @@
+@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Varela+Round&family=Aleo:ital,wght@0,100..900;1,100..900&family=Asap:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/*---------------------- ELEMENTS IN EVERY PAGE ---------------------- */
+
+/* Sets up a grid layout with 12 columns for the body and applies a gradient background */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding-top:10em;
+    background: linear-gradient(90deg, rgba(86,16,16,1) 0%, rgba(117,24,24,1) 50%, rgba(86,16,16,1) 100%);
+}
+
+/* Adds margin around the main content */
+main {
+    margin: 2em 1em 1em 1em;
+}
+
+/* Creates a flex container to center child elements both vertically and horizontally */
+.center-content {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styles the h1 elements with custom font, size, color, and a shadow effect */
+h1 {
+    text-align: center;
+    font-family: "Asap";
+    font-size: 2.5em;
+    color: #ffffff;
+    text-shadow: 5px 1px 5px rgba(0, 0, 0, 0.5);
+    margin: 0.2em 0em 0em 0.4;
+}
+
+/* Adds decorative horizontal lines before and after each h1 element */
+h1::before, h1::after {
+    background: rgb(86, 16, 16);
+    content: "";
+    display: inline-block;
+    height: 5px;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* Sets the color for star ratings */
+.stars {
+    color: rgb(25, 202, 253);
+}
+
+/*---------------------- HEADER ---------------------- */
+
+/* Styles the header for every page */
+header {
+    display:flex;
+    background: rgb(86, 16, 16);
+    background: linear-gradient(90deg, rgba(86,16,16,1) 0%, rgba(117,24,24,1) 50%, rgba(86,16,16,1) 100%);
+    width: 100%;
+    border-bottom: 1px solid white;
+    justify-content: space-between;
+    position: fixed; /* This makes the header fixed at the top */
+    top: 0; /* Position it at the top of the screen */
+    left: 0; /* Ensure it aligns with the left side */
+    z-index: 1000; /* Make sure it stays above other elements */
+    padding: 10px 0; /* Optional: Add padding for spacing */
+}
+
+/* Styles the logo image within the header */ 
+header img { 
+    width: 20em;
+    padding: 0.4em 0em 0.2em 1em;
+}
+
+/*---------------------- FOOTER ---------------------- */
+
+/* Styles the footer for every page */
+footer {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(17,17,17,1) 0%, rgb(28, 28, 28) 50%, rgba(17,17,17,1) 100%);
+    font-family: "Rubik";
+    color: #ffffff;
+    text-align: center;
+}
+
+footer img { 
+    max-width:100%;
+}
+
+/* Styles the h2 element within the footer */
+footer h2 {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Styles the h3 element within the footer */
+footer h3 {
+    border-bottom: 1px solid #5f5f5f;
+    font-weight: lighter;
+    font-size: 1em;
+    margin: 0;
+}
+
+/* Styles the h5 element within the footer */
+footer h5 {
+    color: #5a5a5a;
+    font-style: italic;
+}
+
+/* Styles paragraphs within the footer */
+footer p {
+    border-bottom: 1px solid #5f5f5f;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+/* Styles the contact section within the footer */
+#contact {
+    margin: 0 1em;
+}
+
+/* Styles paragraphs within the contact section */
+#contact p {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    line-height: 1.6em;
+}
+
+/* Styles links within the contact section */
+#contact a {
+    text-decoration: none;
+    font-weight: lighter;
+    color: #ffffff;
+    margin-top: 0.2em;
+    font-size: 0.8em;
+}
+
+/* Adds hover effect for links in the contact section */
+#contact a:hover {
+    color: rgb(25, 202, 253);
+    transition: 0.3s;
+}
+
+/* Styles images inside contact links */
+#contact a img { 
+    width:2.5em;
+    vertical-align: middle;
+    margin-right: 0.3em;
+}
+
+/* Styles the container for partner logos */
+#partners #partners-logos {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* Styles partner images for size and margin */
+#partners img { 
+    width:4em;
+    margin: 0.4em;
+    transition: 0.4s;
+}
+
+/* Adds scaling effect on hover for partner images */
+#partners img:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+
+/* Removes text decoration for partner and social media links */
+#partners a {
+    text-decoration: none;
+}
+
+/* Styles the social media section within the footer */
+#social-media {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+/* Styles the container for social media logos */
+#social-media #media-logos {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* Styles social media images */
+#social-media img { 
+    width:2em;
+    margin: 0.2em;
+    transition: 0.4s;
+}
+
+/* Adds scaling effect on hover for social media images */
+#social-media img:hover { 
+    transform: scale(1.2);
+    transition: 0.4s;
+}
+
+/* Removes text decoration for social media links */
+#social-media a {
+    text-decoration: none;
+}
+
+/*---------------------- MAIN INDEX ---------------------- */
+
+/* Styles the introduction section with background, padding, and border */
+#intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Manjari";
+    text-align: center;
+    background-color: #f5f5dc;
+    width: 80%;
+    padding: 2em;
+    border: 2px solid black;
+    border-radius: 10px 100px / 120px;
+}
+
+/* Styles the h2 element in the intro section */
+#intro h2 {
+    color: black;
+    font-family: "Asap";
+}
+
+/* Styles the grid layout for the news section */
+#news {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25em, auto));
+}
+
+/* Styles the h1 element in the news section */
+#news h1 {
+    grid-column: 1 / -1;
+}
+
+/* Styles individual news article sections */
+.news-article {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-self: center;
+    background-color: #fffffe;
+    font-family: "Manjari";
+    width: 20em;
+    margin: 1em;
+    border: 1px solid black;
+    border-radius: 20px;
+    transition: transform 0.3s;
+}
+
+/* Styles the h3 element within news articles */
+.news-article h3 {
+    font-family: "Roboto Condensed";
+}
+
+/* Styles the hover effect for news articles */
+.news-article:hover {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+    transform: scale(1.03);
+    transition: 0.4s;
+}
+
+/* Styles the images in news articles */
+.news-article img {
+    width:20em;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 1px solid black;
+}
+
+/* Styles links within news articles */
+.news-article a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Styles text inside links in news articles */
+.news-article a p, .news-article a h3 {
+    padding-left: 0.3em;
+    margin: 0.5em;
+}
+
+/* Styles the trust-us section */
+#trust-us {
+    color: white;
+    font-family: "Manjari";
+    margin: 1em;
+    font-size: 1em;
+}
+
+/* Styles the reviews container */
+#reviews {
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20em, auto));
+}
+
+/* Styles individual review sections */
+.review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: "Manjari";
+    margin: 1em;
+}
+
+/* Styles images within reviews */
+.review img { 
+    margin-bottom: 1em;
+    width: 10em;
+    border-radius: 100%;
+    border: 0.15em solid rgb(25, 202, 253);
+}
+
+/* Styles the h3 element in reviews */
+.review h3 {
+    margin: 0;
+}
+
+/* Styles the h5 element in reviews */
+.review h5 {
+    margin: 0;
+    font-size: 0.7em;
+    text-decoration: underline;
+}
+
+/* Styles paragraphs in reviews */
+.review p {
+    font-weight: 110;
+}
+
+/* Add margin to stars for every review */
+.review p + p {
+    margin: 0;
+}
+
+/*---------------------- TABLET ----------------------*/
+@media (min-width: 683px) and (max-width: 1020px) {
+
+    /* Styles for contact section: sets flex direction to column */
+    #contact {
+        display: flex;
+        flex-direction: column; 
+    }
+
+    /* Styles for contact info container: sets flex direction to row */
+    #contact #contact-info {
+        display: flex;
+        flex-direction: row; 
+    }
+
+    /* Styles for each contact info item: adds margin */
+    #contact #contact-info .contact-info-item {
+        margin:1em;
+    }
+
+}
+
+/*---------------------- DESKTOP ----------------------*/
+@media (min-width: 1020px) {
+
+    /* Intro section: sets width to 50% */
+    #intro{
+        width: 50%;
+    }
+
+    /* Trust us section: aligns text to the left */
+    #trust-us{
+        text-align: left;
+    }
+
+    /* Contact section layout: flex column for stacking */
+    #contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Partners section: stacks items vertically and centers them */
+    #partners {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Social media section layout: flex column and center items */
+    #social-media {     
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: end;
+    }
+
+    /* Adds space on top of social media heading */
+    #social-media h5{
+        margin-top:12em;
+    }
+
+    /* Footer layout: flex row, aligns items to the start, and justifies content between */
+    footer { 
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    /* Book lecture items layout: flex row for horizontal alignment */
+    .book-lecture-item {
+        flex-direction: row;
+    }
+
+    /* Details container inside book lecture items: aligns items to the left */
+    .details-container {
+        display:flex;
+        align-items: left;
+    }
+
+    /* Social media heading style: adds margin to the right */
+    #social-media h5 {
+        margin-right: 2em;
+    }
+
+    #partners a img { 
+        width:6em;
+    }
+
+}
+/* index.html */
+
+#categories-container {
+    display: flex;
+    justify-content: center;
+}
+
+.category {
+    margin: 2em;
+    padding: 1em;
+    border: 3px solid #ddd;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    transition: 0.4s;
+}
+
+.category:hover {
+    background-color: rgb(151, 26, 26);
+    border: 3px solid #390b0b;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.category a {
+    text-decoration: none;
+    color: white;
+    font-family: "Manjari";
+    font-weight: bolder;
+}
+
+.category img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto 10px;
+    transition: 0.4s;
+}
+
+.category img:hover {
+    transform: scale(1.05);
+    transition: 0.4s;
+}
+
+.category:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    border: 3px solid #1b1b1b;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    width: 200px;
+}
+
+.dropdown a {
+    display: block;
+    font-family: "Manjari";
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.dropdown a:hover {
+    background-color: #2a2a2a;
+    transition: 0.2s ease-in;
+}
+
+/* category.html*/
+#login-form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    padding: 1em;
+    border-radius: 5px;
+    width:30%;
+    font-family: "Asap";
+}
+
+#login-form input {
+    width: 95%;
+    padding: 0.7em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "Asap";
+}
+
+#login-form input:focus-visible {
+    outline: 1.5px solid rgb(0, 0, 0);
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+#login-form button {
+    background-color: white;
+    color: black;
+    padding: 0.7em 4em;
+    border: 2px solid rgb(25, 202, 253);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Rubik";
+}
+
+
+#login-form button:hover {
+    background-color: rgb(25, 202, 253);
+    transition: 0.3s;
+}
+
+#logged-in-user{
+    flex-direction: column;
+    margin: 0.5em 1em;
+    align-items: center;
+    color: white;
+    font-family: "Rubik";
+}
+
+#logged-in-user p{
+    margin-top: 0;
+}
+
+#username-display{
+    color: rgb(25, 202, 253);
+}
+
+#cart-items-display{
+    color: rgb(25, 202, 253);
+}
+
+#buy-items-button {
+    background-color: rgb(151, 26, 26);
+    border: 2px solid #390b0b;
+    color: white;
+    border-radius: 4px;
+    width: 75%;
+    height: 25%;
+    cursor: pointer;
+    font-family: "Rubik";
+}
+
+#buy-items-button:hover {
+    color: #390b0b;
+    transition: 0.2s;
+}
+
+/* Container for category items */
+#category-items-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+#category-items-container img {
+    width: 30%;
+}
+
+/* Individual learning item */
+.learning-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.learning-item a {
+    align-self: center;
+    margin-top: 1em;
+    color: chocolate;
+    text-decoration: underline;
+    font-family: "Nunito";
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Title of each learning item */
+.learning-item h2 {
+    font-family: "Aleo";
+    align-self: center;
+}
+
+/* Information section of each learning item */
+.learning-item p {
+    font-family: "Nunito";
+    font-size: 1em;
+    margin: 0;
+}
+
+/* Strong tag for labels */
+.learning-item p strong {
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.learning-item-cost {
+    color: #3e9c35;
+}
+
+/* Image for each learning item */
+.learning-item img {
+    align-self: center;
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Styling for the 'type' label */
+.learning-item .type-label {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #007BFF;
+}
+
+/* Footer or additional styling if needed */
+.learning-item .footer {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 20px;
+}
+
+.learning-item-id,.learning-item-type{
+    display:none;
+}
+
+#add-button {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background-color: white;
+    width: 20%;
+    color: black;
+    margin-top: 1em;
+    padding: 0.5em;
+    border: 1.5px solid rgb(27, 27, 27);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Varela Round";
+}
+
+#add-button:hover {
+    text-decoration: underline;
+    background-color: rgb(227, 227, 227);
+    transition: 0.5s;
+}
+
+.features-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.8em;
+}
+
+.features-table td {
+    font-family: "Aleo";
+    font-style: italic;
+    color: #3b3b3b;
+    border: 2px solid #dfdfdf;
+    padding: 0.5em;
+    font-size: 0.8em;
+}
+
+/*cart.html*/
+
+/* Style for the table */
+.cart-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Add background color for table headers */
+.cart-container thead tr {
+    background-color: rgb(5, 144, 183);
+}
+
+/* Style for the table headers */
+.cart-container th {
+    border: 2px solid #ddd;
+    padding: 12px;
+    font-family: "Nunito";
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Style for the table rows */
+.cart-container td {
+    border: 2px solid #ddd;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-family: "Asap";
+}
+
+/* Style for total cost row */
+.cart-container h3 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: "Asap";
+    color: #3e9c35;
+}
+
+/* Style for remove button */
+.cart-container button {
+    background-color: rgb(221, 29, 29);
+    color: white;
+    border: none;
+    padding: 0.6em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Rubik";
+}
+
+.cart-container button:hover {
+    background-color: #b81200;
+    transition: 0.3s ease;
+}
+
+#no-item-message, #empty-cart {
+    color:white;
+    font-family: "Rubik";
+}

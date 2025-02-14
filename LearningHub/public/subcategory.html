@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Learning Hub</title>
+    <link href="..\img\logos\logo-icon.png" rel="shortcut icon" type="image/png" />
+    <link href="..\style\style.css" rel="stylesheet" type="text/css">
+    <script src="\js\utils.js"></script>
+    <script src="\js\render-subcategories-items.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <meta charset="utf-8">
+
+    <script id="subcategory-items-template" type="text/x-handlebars-template">
+            <h1>{{subcategoryTitle}}</h1>
+        
+            {{#if noItemsMessage}}
+                <p id ="no-item-message">{{noItemsMessage}}</p>
+            {{else}}
+
+                {{#each learningItems}}
+                    <div class="learning-item">
+                        <img src="{{image}}" alt="{{title}}">
+                        <h2>{{title}}</h2>
+                        {{#if type}}
+                            {{#if (eq type "Book")}}
+                                <p><strong>Author:</strong> {{author}}</p>
+                                <p><strong>Publisher:</strong> {{publisher}}</p>
+                                <p><strong>Publication Date:</strong> {{publicationDate}}</p> 
+                            {{/if}}
+                            <p><strong>Cost:</strong><span class="learning-item-cost"> {{cost}}</span>€</p>
+                            <p><strong>Description:</strong> {{description}}</p>
+                        {{/if}}
+
+                        {{#if features}}
+                            <table class="features-table">
+                                {{#each (split features ";")}}
+                                    <tr>
+                                        <td>{{this}}</td>
+                                    </tr>
+                                {{/each}}
+                            </table>
+                        {{/if}}
+                        
+                        <a href="{{link}}">Link</a>
+                    </div>
+                {{/each}}
+            {{/if}}
+        </script>
+
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img src="..\img\logos\header-logo.png" alt="Learning Hub"></a>
+    </header>
+
+    <main>
+        <div id="category-items-container"></div>
+    </main>
+
+    <footer>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <h3>Petridis Giannis</h3>
+            <p>
+                <a href="mailto:p3210167@aueb.gr">
+                    <img src="..\\img\logos\mail-logo.png" alt="MailLogo">
+                    p3210167@aueb.gr
+                </a>
+                <a href="https://github.com/PetridhsG">
+                    <img src="..\\img\logos\github-logo.png" alt="Github Logo">
+                    PetridhsG
+                </a>
+            </p>
+
+            <h3>Kefalas Dimitris</h3>
+            <p>
+                <a href="mailto:p3210167@aueb.gr">
+                    <img src="..\\img\logos\mail-logo.png" alt="MailLogo">
+                    p3210075@aueb.gr
+                </a>
+                <a href="https://github.com/dimkef29">
+                    <img src="..\\img\logos\github-logo.png" alt="Github Logo">
+                    dimkef29
+                </a>
+            </p>
+        </section>
+
+        <section id="partners">
+            <h2>Partners</h2>
+            <div id="partners-logos">
+                <a href="https://www.aueb.gr/" target="_blank">
+                    <img src="..\\img\partners\aueb.png">
+                </a>
+                <a href="https://www.stanford.edu/" target="_blank">
+                    <img src="..\\img\partners\stanford.png">
+                </a>
+                <a href="https://www.mit.edu/" target="_blank">
+                    <img src="..\\img\partners\mit.png">
+                </a>
+                <a href="https://ntua.gr/el/" target="_blank">
+                    <img src="..\\img\partners\emp.png">
+                </a>
+            </div>
+        </section>
+
+        <section id="social-media">
+            <h2>Social Media</h2>
+            <div id="media-logos">
+                <a href="https://shattereddisk.github.io/rickroll/rickroll.mp4" target="_blank">
+                    <img src="..\\img\logos\yt.png" alt="yt-logo">
+                </a>
+                <a href="https://x.com/" target="_blank">
+                    <img src="..\\img\logos\x.png" alt="x-logo">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="..\\img\logos\insta.png" alt="insta-logo">
+                </a>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="..\\img\logos\fb.png" alt="fb-logo">
+                </a>
+                <a href="https://discord.com/" target="_blank">
+                    <img src="..\\img\logos\disc.png" alt="disc-logo">
+                </a>
+            </div>
+            <h5>&#169;2024, AUEB Project. All Rights Reserved.</h5>
+        </section>
+    </footer>
+</body>
+
+</html>

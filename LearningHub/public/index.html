@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Learning Hub</title>
+    <link href="..\img\logos\logo-icon.png" rel="shortcut icon" type="image\png" />
+    <link href="..\style\style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="\js\utils.js"></script>
+    <script src="\js\render-categories.js"></script>
+    <meta charset="utf-8">
+
+    <script id="categories-template" type="text/x-handlebars-template">
+        {{#each categories}}
+        <div class="category">
+            <a href="/category.html?id={{id}}">
+                <img src="{{img_url}}" alt="{{title}}">
+                <span>{{title}}</span>
+            </a>
+            <div class="dropdown">
+                {{#each subcategories}}
+                <a href="/subcategory.html?id={{id}}">{{title}}</a>
+                {{/each}}
+            </div>
+        </div>
+        {{/each}}
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img src="..\img\logos\header-logo.png" alt="Learning Hub"></a>
+    </header>
+
+    <main>
+        <div class="center-content">
+            <section id="intro">
+                <h2>Welcome to Learning Hub!</h2>
+                <p>
+                    Welcome to Learning Hub, a dedicated platform for Computer Science students focused on making
+                    learning accessible
+                    and engaging. Here, you’ll find a comprehensive library of course materials, including detailed
+                    notes and recorded
+                    lectures for each subject we offer. Our courses cover essential topics like Software Engineering,
+                    Mathematics,
+                    and more, all designed to help you deepen your understanding and excel in your studies. Plus, stay
+                    updated with our blog,
+                    where we share insights and news on the latest trends and breakthroughs in the tech world.
+                </p>
+            </section>
+        </div>
+
+        <section>
+            <h1>Categories</h1>
+            <div id="categories-container"></div>
+        </section>
+
+        <section id="news">
+            <h1>News</h1>
+            <article class="news-article">
+                <a href="https://openai.com/index/gpt-4o-and-more-tools-to-chatgpt-free/" target="_blank">
+                    <img src="..\\img\news\chatgpt.png">
+                    <h3>Introducing GPT-4o and more tools to ChatGPT free users</h3>
+                    <p>
+                        GPT-4o is our newest flagship model that provides GPT-4-level intelligence but is
+                        much faster and improves on its capabilities across text, voice, and vision.
+                    </p>
+                </a>
+            </article>
+
+            <article class="news-article">
+                <a href="https://www.moneycontrol.com/technology/oracle-releases-latest-version-of-programming-language-java-23-article-12823976.html"
+                    target="_blank">
+                    <img src="..\\img\news\java.png">
+                    <h3>Oracle releases latest version of programming language Java 23 </h3>
+                    <p>
+                        The new update will have 12 enhancement proposals that help developers
+                        increase productivity by improving the Java language.
+                    </p>
+                </a>
+            </article>
+
+            <article class="news-article">
+                <a href="https://www.efinancialcareers.com/news/can-becoming-a-c-expert-ruin-your-engineering-career"
+                    target="_blank">
+                    <img src="..\\img\news\cpp.png">
+                    <h3>Can becoming a C++ expert ruin your engineering career?</h3>
+                    <p>
+                        C++ veterans seem to believe learning C++ has crippled their career prospects.
+                        One engineer said they hate it, and feel like it's a lot of useless knowledge.
+                    </p>
+                </a>
+            </article>
+
+            <article class="news-article">
+                <a href="https://www.unrealengine.com/en-US/blog/unreal-engine-5-5-is-now-available" target="_blank">
+                    <img src="..\\img\news\unreal.png">
+                    <h3>Unreal Engine 5.5 is now available worldwide</h3>
+                    <p>
+                        Check out the major enhancements to animation authoring, rendering, virtual production,
+                        mobile game development, and developer iteration toolsets—plus more.
+                    </p>
+                </a>
+
+            </article>
+        </section>
+
+        <section id="trust-us">
+            <h1>Why Trust Us</h1>
+            <p>
+                Since its inception, Learning Hub has supported over 10,000 Computer Science students in achieving their
+                academic goals.
+                With a comprehensive library that includes detailed course notes and recorded lectures, the platform has
+                provided
+                invaluable resources across essential subjects like Software Engineering and Mathematics. Students
+                report a significant
+                increase in understanding and engagement, attributing their academic growth and exam success to the
+                accessible and
+                well-organized content. Furthermore, the blog has further enriched the community by delivering insights
+                on tech trends,
+                helping learners stay informed and inspired. Don't trust us? Trust the following reviews!
+            </p>
+        </section>
+
+        <section id="reviews">
+
+            <atricle class="review">
+                <img src="..\\img\profile-pics\zuck.png">
+                <h3>Mark Zuckerberg</h3>
+                <h5>Co-Founder of Meta</h5>
+                <p>
+                    As someone who has experienced the transformative power of computer science,
+                    I’m excited to see platforms like this empowering students to learn, create, and innovate.
+                    The future belongs to those who keep learning, and this resource is a great step in that direction.
+                    I am looking forward to watching this amazing team project evolve.
+                </p>
+                <p class="stars">
+                    &#9733 &#9733 &#9733 &#9733
+                </p>
+            </atricle>
+
+            <atricle class="review">
+                <img src="..\\img\profile-pics\leon.png">
+                <h3>Leon Yohai</h3>
+                <h5>Entrepreneur</h5>
+                <p>
+                    This platform is an impressive resource for aspiring computer scientists, blending
+                    theoretical knowledge with practical insights. As an entrepreneur, I know
+                    that a strong foundation in technology is key to innovation and success. This site
+                    equips students with the tools and confidence they need to build their future.
+                </p>
+                <p class="stars">
+                    &#9733 &#9733 &#9733 &#9733 &#9733
+                </p>
+            </atricle>
+
+            <atricle class="review">
+                <img src="..\\img\profile-pics\bill.png">
+                <h3>Bill Gates</h3>
+                <h5>Co-Founder of Microsoft</h5>
+                <p>
+                    Education is the foundation for future progress, and empowering students with computer
+                    science knowledge is more important than ever. This platform stands out as a valuable
+                    resource for college students eager to learn and make an impact. I’m excited to see how
+                    this helps inspire the next generation of innovators.
+                </p>
+                <p class="stars">
+                    &#9733 &#9733 &#9733
+                </p>
+            </atricle>
+        </section>
+
+    </main>
+
+    <footer>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <h3>Petridis Giannis</h3>
+            <p>
+                <a href="mailto:p3210167@aueb.gr">
+                    <img src="..\\img\logos\mail-logo.png" alt="MailLogo">
+                    p3210167@aueb.gr
+                </a>
+                <a href="https://github.com/PetridhsG">
+                    <img src="..\\img\logos\github-logo.png" alt="Github Logo">
+                    PetridhsG
+                </a>
+            </p>
+
+            <h3>Kefalas Dimitris</h3>
+            <p>
+                <a href="mailto:p3210167@aueb.gr">
+                    <img src="..\\img\logos\mail-logo.png" alt="MailLogo">
+                    p3210075@aueb.gr
+                </a>
+                <a href="https://github.com/dimkef29">
+                    <img src="..\\img\logos\github-logo.png" alt="Github Logo">
+                    dimkef29
+                </a>
+            </p>
+        </section>
+
+        <section id="partners">
+            <h2>Partners</h2>
+            <div id="partners-logos">
+                <a href="https://www.aueb.gr/" target="_blank">
+                    <img src="..\\img\partners\aueb.png">
+                </a>
+                <a href="https://www.stanford.edu/" target="_blank">
+                    <img src="..\\img\partners\stanford.png">
+                </a>
+                <a href="https://www.mit.edu/" target="_blank">
+                    <img src="..\\img\partners\mit.png">
+                </a>
+                <a href="https://ntua.gr/el/" target="_blank">
+                    <img src="..\\img\partners\emp.png">
+                </a>
+            </div>
+        </section>
+
+        <section id="social-media">
+            <h2>Social Media</h2>
+            <div id="media-logos">
+                <a href="https://shattereddisk.github.io/rickroll/rickroll.mp4" target="_blank">
+                    <img src="..\\img\logos\yt.png" alt="yt-logo">
+                </a>
+                <a href="https://x.com/" target="_blank">
+                    <img src="..\\img\logos\x.png" alt="x-logo">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="..\\img\logos\insta.png" alt="insta-logo">
+                </a>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="..\\img\logos\fb.png" alt="fb-logo">
+                </a>
+                <a href="https://discord.com/" target="_blank">
+                    <img src="..\\img\logos\disc.png" alt="disc-logo">
+                </a>
+            </div>
+            <h5>&#169;2024, AUEB Project. All Rights Reserved.</h5>
+        </section>
+    </footer>
+</body>
+
+</html>
