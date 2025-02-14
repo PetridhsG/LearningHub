@@ -38,6 +38,8 @@ If you need to run the server with different options, modify the `options` JSON 
 
 ## Notes:
 
+- The app fetches learning resources from a public API, which may be temporarily unavailable when you run the project.
+
 - The app uses a MongoDB database to store user data, including login details and items in the cart. Sometimes, UI updates may be slow because MongoDB can enter a sleep mode when not used for a long time, causing delays when querying data again.
 
 - The app uses the Session Storage API to maintain the session ID. This ensures that a logged-in user's information is kept while the session remains active
